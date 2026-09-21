@@ -1,1 +1,39 @@
+Creacion Clase Cliente
+
+package cafeteria_universitaria;
+
+public class clase_Cliente {
+    private String cod_cliente,nombre_cliente,correo_cliente;
+
+    public clase_Cliente(String cod_cliente, String nombre_cliente, String correo_cliente) {
+        this.cod_cliente = cod_cliente;
+        this.nombre_cliente = nombre_cliente;
+        this.correo_cliente = correo_cliente;
+    }
+
+    public void setCod_cliente(String cod_cliente) {
+        this.cod_cliente = cod_cliente;
+    }
+
+    public void setNombre_cliente(String nombre_cliente) {
+        this.nombre_cliente = nombre_cliente;
+    }
+
+    public void setCorreo_cliente(String correo_cliente) {
+        this.correo_cliente = correo_cliente;
+    }
+
+    public String getCod_cliente() {
+        return cod_cliente;
+    }
+
+    public String getNombre_cliente() {
+        return nombre_cliente;
+    }
+
+    public String getCorreo_cliente() {
+        return correo_cliente;
+    }
+
+}
 
