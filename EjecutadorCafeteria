@@ -1,0 +1,118 @@
+package cafeteria_universitaria;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Ejecutar_Cafeteria 
+{
+
+    
+    public static void main(String[] args) 
+    {
+        int Opcion,opcion_cliente,opcion_pedido;
+        Scanner lectura = new Scanner(System.in);
+        ArrayList<Cliente> listaclientes= new ArrayList<>();
+        ArrayList<pedido>listapedidos=new ArrayList();
+        HashMap<String,pedido> pedido;  
+        System.out.println("------------Cafeteria Universitaria---------");
+        System.out.println("¿Que operacion desea realizar?");
+        System.out.println("1.Clientes");
+        System.out.println("2.Pedidos");
+        Opcion = lectura.nextInt();
+        switch(Opcion)
+        {
+            case 1 :
+            {
+                System.out.println("");
+                System.out.println("");
+                System.out.println("1.Registrar Cliente");
+                System.out.println("2.Mostrar datos del cliente y sus pedidos");
+                opcion_cliente =lectura.nextInt();
+                switch (opcion_cliente)
+                {
+                    case 1:
+                    {
+                        System.out.println("Ingrese el codigo del cliente");
+                        String cod_cliente =lectura.nextLine();
+
+                        System.out.println("Ingrese nombres completos");
+                        String nombre_completo = lectura.nextLine();
+
+                        System.out.println("Ingrese el correo electronico del cliente");
+                        String correo = lectura.nextLine();
+
+                        Cliente nuevoCliente = new Cliente(cod_cliente,nombre_completo,correo);
+                        listaclientes.add(nuevoCliente);
+                        System.out.println("Cliente Registrado");
+                    break;}
+                    case 2:
+                    {
+                        System.out.println("-----Lista de Clientes----- ");
+                    if(listaclientes.isEmpty())
+                    {
+                        System.out.println("No hay clientes");
+                    }
+                    else
+                    {
+                        for(int i=0 ; i < listaclientes.size();i++)
+                        {
+                            Cliente cliente = listaclientes.get(i);
+                            System.out.println((i+1)+"Codigo "+cliente.getCod_cliente()+"Nombres "+ cliente.getNombre_cliente()+ "Correo "+ cliente.getCorreo_cliente());
+                        }
+                        System.out.println("");
+                    }
+                    break;}
+                    default : System.out.println("Escoja una opcion");
+                }
+
+            }break;
+            case 2 :
+            {
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("1.Agregar Pedido");
+                System.out.println("2.Buscar pedido por codigo");
+                System.out.println("3.Cambiar Estado de un pedido");
+                opcion_pedido = lectura.nextInt();
+                switch (opcion_pedido)
+                {
+                    case 1:
+                    {System.out.println("Ingrese el codigo del pedido");
+                        String cod_pedido =lectura.nextLine();
+
+                        System.out.println("Ingrese descripcion del pedido");
+                        String descripcion = lectura.nextLine();
+
+                        System.out.println("Ingrese el precio unitario");
+                        double precio = lectura.nextDouble();
+                        System.out.println("Ingrese la cantidad");
+                        int cantidad = lectura.nextInt();
+                        System.out.println("Ingrese el Estado del pedido");
+                        String Estado = lectura.nextLine();
+                        pedido nuevopedido = new pedido(cod_pedido,descripcion,precio,cantidad);
+                        nuevopedido.AgregarPedido(cod_pedido, descripcion, Estado, precio, cantidad);
+                        listapedidos.add(nuevopedido);
+                        System.out.println("Pedido Registrado");
+                        System.out.println("Importe por este pedido es de "+ nuevopedido.CalcularImporte(precio, cantidad));
+                        break;
+
+                    }
+                    case 2:
+                    {
+                        System.out.println("Ingrese el codigo");
+                        String Codigo= lectura.nextLine();
+
+
+
+                    }
+                    default : System.out.println("Escoja una opcion");
+                }
+            break;}
+
+            default :System.out.println("Escoja una opcion");
+        }
+
+    }
+}
