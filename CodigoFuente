@@ -37,3 +37,59 @@ public class clase_Cliente {
 
 }
 
+
+package cafeteria_universitaria;
+
+public class clase_pedido {
+    private String codigo_pedido,descripcion,estado_pedido;
+    private double Precio;
+    private int cantidad;
+
+    public clase_pedido(String codigo_pedido, String descripcion, double Precio, int cantidad) {
+        this.codigo_pedido = codigo_pedido;
+        this.descripcion = descripcion;
+        this.Precio = Precio;
+        this.cantidad = cantidad;
+    }
+
+    public String getCodigo_pedido() {
+        return codigo_pedido;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public String getEstado_pedido() {
+        return estado_pedido;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCodigo_pedido(String codigo_pedido) {
+        this.codigo_pedido = codigo_pedido;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setEstado_pedido(String estado_pedido) {
+        this.estado_pedido = estado_pedido;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+}
