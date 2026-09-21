@@ -27,7 +27,9 @@ El sistema debe permitir:
 6. Buscar un pedido por su código.
 7. Cambiar el estado de un pedido.
 8. Validar que los datos ingresados sean correctos.
+9. 
 Restricciones del negocio
+
 • El código del cliente no debe estar vacío.
 • El código del pedido debe ser único dentro del cliente.
 • El precio y la cantidad deben ser mayores que cero.
