@@ -2,9 +2,9 @@ Creacion Clase Cliente
 
 package cafeteria_universitaria;
 
+
 public class clase_Cliente {
     private String cod_cliente,nombre_cliente,correo_cliente;
-
     public clase_Cliente(String cod_cliente, String nombre_cliente, String correo_cliente) {
         this.cod_cliente = cod_cliente;
         this.nombre_cliente = nombre_cliente;
@@ -34,7 +34,10 @@ public class clase_Cliente {
     public String getCorreo_cliente() {
         return correo_cliente;
     }
-
+    public void MostrarDatos()
+    {
+        System.out.println("Codigo "+ this.cod_cliente+ "Nombre "+ this.nombre_cliente + " Email "+ this.correo_cliente);
+    }
 }
 
 
