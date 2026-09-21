@@ -43,16 +43,23 @@ public class clase_Cliente {
 
 package cafeteria_universitaria;
 
-public class clase_pedido {
+import java.util.HashMap;
+
+public class pedido {
     private String codigo_pedido,descripcion,estado_pedido;
     private double Precio;
     private int cantidad;
-
-    public clase_pedido(String codigo_pedido, String descripcion, double Precio, int cantidad) {
+    private HashMap<String,Cliente> pedido;
+public pedido()
+{
+this.pedido = new HashMap<String,Cliente>();
+}
+    public pedido(String codigo_pedido, String descripcion, double Precio, int cantidad) {
         this.codigo_pedido = codigo_pedido;
         this.descripcion = descripcion;
         this.Precio = Precio;
         this.cantidad = cantidad;
+        this.pedido = new HashMap<String,Cliente>();
     }
 
     public String getCodigo_pedido() {
@@ -94,5 +101,25 @@ public class clase_pedido {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
+    public HashMap<String,Cliente> getPedidos()
+    {
+        return pedido;
+    }
+    public void AgregarCliente(Cliente obj_cliente)
+    {
+        if(pedido.containsKey(obj_cliente.getCod_cliente()))
+        {
+            System.out.println("YA ESTA REGISTRADO");
+        }
+        else
+        {
+            pedido.put(obj_cliente.getCod_cliente(),obj_cliente);
+            System.out.println("Cliente registrado");
+        }
+    }
+    public Cliente Buscarparticipante(String id)
+    {
+    return pedido.get(id);
+    }
 }
+
